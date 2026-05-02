@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Messages</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets-css/student.css" />
+
+    <!-- ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="messages-page">
+    <div class="supervisor-layout">
+      <!-- 🔵 SIDEBAR -->
+      <aside class="sidebar">
+        <h2 class="logo"><i class="fa fa-graduation-cap"></i> ThesisTrack</h2>
+
+        <ul class="menu">
+          <li onclick="location.href = 'dashboard-student.html'">
+            <i class="fa fa-home"></i><span>Dashboard</span>
+          </li>
+
+          <li onclick="location.href = 'files-student.html'">
+            <i class="fa fa-folder"></i><span>Files</span>
+          </li>
+
+          <li onclick="location.href = 'tasks.html'">
+            <i class="fa fa-check"></i><span>Tasks</span>
+          </li>
+
+          <li onclick="location.href = 'search.html'">
+            <i class="fa fa-user-tie"></i><span>Supervisor Search</span>
+          </li>
+
+          <li class="active">
+            <i class="fa fa-envelope"></i><span>Messages</span>
+          </li>
+
+          <li onclick="location.href = 'Notifications-student.html'">
+            <i class="fa fa-bell"></i><span>Notifications</span>
+          </li>
+          <li onclick="location.href = 'profile-student.html'">
+            <i class="fa fa-user"></i><span>Profile</span>
+          </li>
+        </ul>
+      </aside>
+      <!-- 🟢 MAIN -->
+      <main class="main-content">
+        <!-- HEADER -->
+        <header class="topbar">
+          <h2>Messages</h2>
+
+          <div style="display: flex; gap: 10px">
+            <button class="add-btn" onclick="openMsgForm()">
+              + New Message
+            </button>
+          </div>
+        </header>
+
+        <div class="message-tabs">
+          <button id="inbox-tab" class="active">Inbox</button>
+          <button id="sent-tab">Sent</button>
+        </div>
+        <div class="messages-container">
+          <!-- LEFT: inbox -->
+          <div id="messages-list" class="messages-list"></div>
+
+          <!-- RIGHT: conversation -->
+          <div id="message-view" class="message-content"></div>
+        </div>
+        <div id="new-message-form" class="modal hidden">
+          <div class="modal-box message-box">
+            <div class="form-header">
+              <span onclick="closeMsgForm()" class="back-btn">
+                ← Back to Messages
+              </span>
+              <h3>New Message</h3>
+            </div>
+
+            <form id="msg-form">
+              <div class="form-body">
+                <label>To</label>
+                <input
+                  type="email"
+                  name="to"
+                  id="msg-to"
+                  placeholder="Enter email..."
+                  required
+                />
+
+                <label>Subject</label>
+                <input
+                  name="subject"
+                  id="msg-subject"
+                  placeholder="e.g. Request for meeting"
+                />
+
+                <label>Message</label>
+                <textarea
+                  name="content"
+                  id="msg-content"
+                  placeholder="Write your message..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button
+                  type="button"
+                  onclick="closeMsgForm()"
+                  class="cancel-btn"
+                >
+                  Cancel
+                </button>
+
+                <button type="submit" class="send-btn">
+                  <i class="fa fa-paper-plane"></i> Send
+                </button>
+              </div>
+            </form>
+
+            <div class="form-actions">
+              <button onclick="closeMsgForm()" class="cancel-btn">
+                Cancel
+              </button>
+              <button type="submit" class="send-btn">
+                <i class="fa fa-paper-plane"></i> Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../assets-js/student.js"></script>
+  </body>
+</html>

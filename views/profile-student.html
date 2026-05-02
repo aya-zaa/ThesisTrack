@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profile</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets-css/student.css" />
+
+    <!-- ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="profile-page">
+    <div class="supervisor-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h2 class="logo"><i class="fa fa-graduation-cap"></i> ThesisTrack</h2>
+
+        <ul class="menu">
+          <li onclick="location.href = 'dashboard-student.html'">
+            <i class="fa fa-home"></i><span>Dashboard</span>
+          </li>
+
+          <li onclick="location.href = 'files-student.html'">
+            <i class="fa fa-folder"></i><span>Files</span>
+          </li>
+          <li onclick="location.href = 'tasks.html'">
+            <i class="fa fa-check"></i><span>Tasks</span>
+          </li>
+          <li onclick="location.href = 'search.html'">
+            <i class="fa fa-user-tie"></i><span>Supervisor Search</span>
+          </li>
+
+          <li onclick="location.href = 'message.html'">
+            <i class="fa fa-envelope"></i><span>Messages</span>
+          </li>
+
+          <li onclick="location.href = 'Notifications-student.html'">
+            <i class="fa fa-bell"></i><span>Notifications</span>
+          </li>
+
+          <li class="active" onclick="location.href = 'profile-student.html'">
+            <i class="fa fa-user"></i>
+            <span>Profile</span>
+          </li>
+        </ul>
+      </aside>
+      <!-- MAIN -->
+      <div class="main-content">
+        <h2 class="page-title">Profile</h2>
+        <p class="subtitle">Manage your personal and academic information</p>
+
+        <!-- HEADER -->
+        <div class="profile-header">
+          <div class="avatar" id="avatar">--</div>
+
+          <div class="header-info">
+            <h3 id="displayName">Your Name</h3>
+            <p id="displayField">Your Field</p>
+          </div>
+
+          <button id="editBtn"><i class="fa fa-pen"></i> Edit Profile</button>
+        </div>
+        <!-- TOP INFO -->
+        <div class="top-info">
+          <div class="top-box">
+            <i class="fa fa-id-card"></i>
+            <div>
+              <span>Student ID</span>
+              <strong id="displayId">--</strong>
+            </div>
+          </div>
+
+          <div class="top-box">
+            <i class="fa fa-graduation-cap"></i>
+            <div>
+              <span>Program</span>
+              <strong id="displayProgram">--</strong>
+            </div>
+          </div>
+
+          <div class="top-box">
+            <i class="fa fa-calendar"></i>
+            <div>
+              <span>Enrolled</span>
+              <strong id="displayDate">--</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- PERSONAL -->
+        <div class="card">
+          <h4>Personal Information</h4>
+
+          <div class="row">
+            <div class="icon"><i class="fa fa-user"></i></div>
+            <input id="name" placeholder="Full Name" disabled />
+          </div>
+          <div class="row">
+            <div class="icon"><i class="fa fa-envelope"></i></div>
+            <input id="email" placeholder="Email" disabled />
+          </div>
+          <div class="row">
+            <div class="icon"><i class="fa fa-phone"></i></div>
+            <input id="phone" placeholder="Phone" disabled />
+          </div>
+          <div class="row">
+            <div class="icon"><i class="fa fa-book"></i></div>
+            <input id="field" placeholder="Field of study" disabled />
+          </div>
+        </div>
+
+        <!-- ACADEMIC -->
+        <div class="card">
+          <h4>Academic Information</h4>
+
+          <div class="row">
+            <div class="icon"><i class="fa fa-id-card"></i></div>
+            <input id="studentId" placeholder="Student ID" readonly />
+          </div>
+          <div class="row">
+            <div class="icon"><i class="fa fa-building"></i></div>
+            <input id="department" placeholder="Department" disabled />
+          </div>
+          <div class="row">
+            <div class="icon"><i class="fa fa-calendar"></i></div>
+            <input id="date" placeholder="Enrollment Date" disabled />
+          </div>
+          <div class="row">
+            <div class="icon"><i class="fa fa-user-tie"></i></div>
+            <input id="supervisor" placeholder="Supervisor" disabled />
+          </div>
+        </div>
+
+        <button id="saveBtn" class="hidden">Save</button>
+      </div>
+    </div>
+    <!-- USER MENU -->
+    <div class="user-menu">
+      <div id="userToggle" class="user-info">
+        <div class="mini-avatar">--</div>
+        <span>User</span>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+      <div id="userDropdown" class="dropdown hidden">
+        <div id="logoutBtn"><i class="fa fa-sign-out-alt"></i> Logout</div>
+
+        <div id="deleteBtn" style="color: red">
+          <i class="fa fa-trash"></i> Delete Account
+        </div>
+      </div>
+    </div>
+
+    <!-- CONFIRM MODAL -->
+    <div id="confirmModal" class="modal hidden">
+      <div class="modal-box">
+        <h3 id="modalTitle">Confirm Action</h3>
+        <p id="modalText">Are you sure?</p>
+
+        <div class="modal-actions">
+          <button id="cancelBtn">Cancel</button>
+          <button id="confirmBtn" class="delete-btn">Confirm</button>
+        </div>
+      </div>
+    </div>
+    <script src="../assets-js/student.js"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="../assets-css/student.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="dashboard-page">
+    <div class="supervisor-layout">
+      <aside class="sidebar">
+        <h2 class="logo"><i class="fa fa-graduation-cap"></i> ThesisTrack</h2>
+
+        <ul class="menu">
+          <li class="active">
+            <i class="fa fa-home"></i><span>Dashboard</span>
+          </li>
+
+          <li onclick="location.href = 'files-student.html'">
+            <i class="fa fa-folder"></i><span>Files</span>
+          </li>
+
+          <li onclick="location.href = 'tasks.html'">
+            <i class="fa fa-check"></i><span>Tasks</span>
+          </li>
+
+          <li onclick="location.href = 'search.html'">
+            <i class="fa fa-user-tie"></i><span>Supervisor Search</span>
+          </li>
+
+          <li onclick="location.href = 'message.html'">
+            <i class="fa fa-envelope"></i><span>Messages</span>
+          </li>
+
+          <li onclick="location.href = 'Notifications-student.html'">
+            <i class="fa fa-bell"></i><span>Notifications</span>
+          </li>
+          <li onclick="location.href = 'profile-student.html'">
+            <i class="fa fa-user"></i><span>Profile</span>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <div class="student-dashboard">
+          <div class="main">
+            <div class="topbar">
+              <div class="user">
+                <div class="avatar" id="avatar"></div>
+                <div>
+                  <strong id="username"></strong>
+                  <p>Student</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div>
+                <small>CURRENT PROJECT</small>
+                <h2 id="projectTitle"></h2>
+                <p id="supervisor"></p>
+              </div>
+              <span id="projectStatus"></span>
+            </div>
+
+            <div class="grid">
+              <div class="card">
+                <div class="card-header">
+                  <h3>My Tasks</h3>
+                  <span id="taskCount"></span>
+                </div>
+                <div id="tasks"></div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h3>Recent Files</h3>
+                </div>
+                <div id="files"></div>
+              </div>
+
+              <!-- SUPERVISOR -->
+              <div class="card wide">
+                <div class="card-header">
+                  <h3>Supervisor Tasks</h3>
+                </div>
+                <div id="supTasks"></div>
+              </div>
+
+              <!-- NOTIFICATIONS -->
+              <div class="card">
+                <div class="card-header">
+                  <h3>
+                    Notifications
+                    <span id="notifCount" class="notif-count">0</span>
+                  </h3>
+                </div>
+                <div id="notifications"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        ```
+      </main>
+    </div>
+
+    <script src="../assets-js/student.js"></script>
+  </body>
+</html>
