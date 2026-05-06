@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Notifications</title>
+
+    <link rel="stylesheet" href="../assets-css/student.css" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="notifications-page">
+    <div class="supervisor-layout">
+      <aside class="sidebar">
+        <h2 class="logo"><i class="fa fa-graduation-cap"></i> ThesisTrack</h2>
+
+        <ul class="menu">
+          <li onclick="location.href = 'dashboard-student.html'">
+            <i class="fa fa-home"></i><span>Dashboard</span>
+          </li>
+
+          <li onclick="location.href = 'files-student.html'">
+            <i class="fa fa-folder"></i><span>Files</span>
+          </li>
+          <li onclick="location.href = 'tasks.html'">
+            <i class="fa fa-check"></i><span>Tasks</span>
+          </li>
+          <li onclick="location.href = 'search.html'">
+            <i class="fa fa-user-tie"></i><span>Supervisor Search</span>
+          </li>
+
+          <li onclick="location.href = 'message.html'">
+            <i class="fa fa-envelope"></i><span>Messages</span>
+          </li>
+
+          <li class="active">
+            <i class="fa fa-bell"></i><span>Notifications</span>
+          </li>
+
+          <li onclick="location.href = 'profile-student.html'">
+            <i class="fa fa-user"></i><span>Profile</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- ✅ MAIN -->
+      <main class="main-content">
+        <!-- HEADER -->
+        <header class="topbar">
+          <div>
+            <h2>
+              Notifications
+              <span id="count" class="notif-count">0</span>
+            </h2>
+            <p class="sub">Stay updated with your activity</p>
+          </div>
+
+          <button class="add-btn" onclick="markAllRead()">Mark all read</button>
+        </header>
+
+        <!-- TABS -->
+        <div class="message-tabs">
+          <button id="tab-all" onclick="filter('all')" class="active">
+            All
+          </button>
+          <button id="tab-review" onclick="filter('review')">Reviewed</button>
+          <button id="tab-feedback" onclick="filter('feedback')">
+            Feedback
+          </button>
+          <button id="tab-task" onclick="filter('task')">Tasks</button>
+        </div>
+
+        <!-- LIST -->
+        <div class="box" id="list"></div>
+      </main>
+    </div>
+
+    <script src="../assets-js/student.js"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Messages - Supervisor</title>
+
+    <link rel="stylesheet" href="../assets-css/prof.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="messages-page prof-page">
+    <div class="supervisor-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h2 class="logo"><i class="fa fa-graduation-cap"></i> ThesisTrack</h2>
+
+        <ul class="menu">
+          <li onclick="location.href = 'Dashboard-prof.html'">
+            <i class="fa fa-home"></i><span>Dashboard</span>
+          </li>
+
+          <li onclick="location.href = 'projects.html'">
+            <i class="fa fa-folder"></i><span>Projects</span>
+          </li>
+
+          <li onclick="location.href = 'files-prof.html'">
+            <i class="fa fa-folder"></i><span>Files</span>
+          </li>
+
+          <li onclick="location.href = 'reviews.html'">
+            <i class="fa fa-check"></i><span>Reviews</span>
+          </li>
+
+          <li class="active" onclick="location.href = 'message-prof.html'">
+            <i class="fa fa-envelope"></i><span>Messages</span>
+          </li>
+
+          <li onclick="location.href = 'notifications.html'">
+            <i class="fa fa-bell"></i><span>Notifications</span>
+          </li>
+
+          <li onclick="location.href = 'profile-prof.html'">
+            <i class="fa fa-user"></i><span>Profile</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main-content">
+        <header class="topbar">
+          <h2>Messages</h2>
+
+          <button class="new-msg-btn" onclick="openMsgForm()">
+            + New Message
+          </button>
+        </header>
+        <!-- FILTER -->
+        <div class="tabs">
+          <button
+            onclick="
+              renderProfInbox();
+              setActive(event);
+            "
+            class="active"
+          >
+            Inbox
+          </button>
+          <button
+            onclick="
+              renderProfSent();
+              setActive(event);
+            "
+          >
+            Sent
+          </button>
+        </div>
+
+        <!-- LIST -->
+        <div class="prof-messages-container">
+          <div id="profMessagesList" class="prof-messages-list"></div>
+          <div id="profMessageView" class="prof-message-content"></div>
+        </div>
+      </main>
+    </div>
+    <div id="new-message-form" class="modal hidden">
+      <div class="modal-box message-box">
+        <div class="form-header">
+          <span onclick="closeMsgForm()" class="back-btn">
+            ← Back to Messages
+          </span>
+          <h3>New Message</h3>
+        </div>
+
+        <div class="form-body">
+          <label>To</label>
+          <input type="email" id="msg-to" placeholder="Enter email..." />
+
+          <label>Subject</label>
+          <input id="msg-subject" placeholder="e.g. Request for meeting" />
+
+          <label>Message</label>
+          <textarea
+            id="msg-content"
+            placeholder="Write your message..."
+          ></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button onclick="closeMsgForm()" class="cancel-btn">Cancel</button>
+
+          <button onclick="sendNewMessage()" class="send-btn">
+            <i class="fa fa-paper-plane"></i> Send
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="../assets-js/prof.js"></script>
+  </body>
+</html>

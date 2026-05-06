@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThesisTrack - Notifications</title>
+
+<link rel="stylesheet" href="../assets-css/prof.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body class="notifications-page">
+
+<div class="supervisor-layout">
+
+   <aside class="sidebar">
+        <h2 class="logo"><i class="fa fa-graduation-cap"></i> ThesisTrack</h2>
+
+        <ul class="menu">
+          <li  onclick="location.href = 'Dashboard-prof.html'">
+            <i class="fa fa-home"></i><span>Dashboard</span>
+          </li>
+
+          <li onclick="location.href = 'projects.html'">
+            <i class="fa fa-folder"></i><span>Projects</span>
+          </li>
+
+          <li onclick="location.href = 'files-prof.html'">
+            <i class="fa fa-folder"></i><span>Files</span>
+          </li>
+
+          <li onclick="location.href = 'reviews.html'">
+            <i class="fa fa-check"></i><span>Reviews</span>
+          </li>
+
+          <li onclick="location.href = 'message-prof.html'">
+            <i class="fa fa-envelope"></i><span>Messages</span>
+          </li>
+
+          <li class="active" onclick="location.href = 'notifications.html'">
+            <i class="fa fa-bell"></i><span>Notifications</span>
+          </li>
+
+          <li onclick="location.href = 'profile-prof.html'">
+            <i class="fa fa-user"></i><span>Profile</span>
+          </li>
+        </ul>
+      </aside>
+  <main class="main-content">
+
+    <section class="content-body">
+
+    <div class="title-row">
+  <h1>
+    Notifications 
+    <span id="newCount" style="color:green; font-size:14px;"></span>
+  </h1>
+
+  <button id="markAll"
+   class="mark-read">
+    <i class="far fa-envelope-open"></i> Mark all read
+  </button>
+</div>
+
+      <p class="subtitle">
+        Stay updated on student submissions and file reviews
+      </p>
+
+      <div class="filters">
+
+        <button class="filter-btn active" data-type="all">All (0)</button>
+        <button class="filter-btn" data-type="submitted">File Submitted (0)</button>
+        <button class="filter-btn" data-type="feedback">Feedback Added (0)</button>
+        <button class="filter-btn" data-type="approved">File Approved (0)</button>
+
+      </div>
+
+      <div class="notifications-list" id="notificationsList"></div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="../assets-js/prof.js"></script>
+
+</body>
+</html>
