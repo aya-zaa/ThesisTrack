@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../assets-css/student.css" />
+    <title>ThesisTrack - Supervisor Search</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="search-page">
+    <div class="supervisor-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h2 class="logo"><i class="fa fa-graduation-cap"></i> ThesisTrack</h2>
+
+        <ul class="menu">
+ <li onclick="location.href = 'dashboard-student.html'">
+            <i class="fa fa-home"></i><span>Dashboard</span>
+          </li>
+         <li onclick="location.href = 'files-student.html'">
+            <i class="fa fa-folder"></i><span>Files</span>
+          </li>
+         <li onclick="location.href = 'tasks.html'">
+            <i class="fa fa-check"></i><span>Tasks</span>
+          </li>
+
+
+          <li class="active" onclick="location.href = 'search.html'">
+            <i class="fa fa-user-tie"></i><span>Supervisor Search</span>
+          </li>
+
+          <li onclick="location.href = 'message.html'">
+            <i class="fa fa-envelope"></i><span>Messages</span>
+          </li>
+
+          <li onclick="location.href = 'Notifications-student.html'">
+            <i class="fa fa-bell"></i><span>Notifications</span>
+          </li><li onclick="location.href = 'profile-student.html'">
+            <i class="fa fa-user"></i><span>Profile</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <h2>Supervisor Search</h2>
+            <p class="sub">Find and request a supervisor</p>
+          </div>
+        </header>
+
+        <!-- SEARCH -->
+        <div class="file-controls">
+          <input type="text" id="searchInput" placeholder="Search by name..." />
+        </div>
+
+        <!-- RESULTS -->
+        <div id="supervisors-container" class="files-grid"></div>
+      </main>
+    </div>
+    <div id="requestModal" class="modal hidden">
+  <div class="modal-box request-box">
+
+    <div class="modal-header">
+      <h3>Request Supervision</h3>
+      <span onclick="closeRequestModal()" class="close">×</span>
+    </div>
+
+    <div class="sup-preview">
+      <div class="avatar" id="modalAvatar">--</div>
+      <div>
+        <div id="selectedSupervisor" class="sup-name"></div>
+        <div id="modalField" class="sup-field"></div>
+      </div>
+    </div>
+
+    <label>Message</label>
+    <textarea id="requestMessage" placeholder="Write a message explaining why you'd like this supervisor..."></textarea>
+
+    <div class="modal-actions">
+      <button onclick="closeRequestModal()">Cancel</button>
+      <button class="send-btn" onclick="sendRequest()">Send Request</button>
+    </div>
+
+    </div>
+    <script src="../assets-js/student.js"></script>
+  </body>
+</html>

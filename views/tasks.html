@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../assets-css/student.css" />
+    <title>ThesisTrack - Tasks</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="supervisor-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h2 class="logo"><i class="fa fa-graduation-cap"></i> ThesisTrack</h2>
+
+        <ul class="menu">
+          <li onclick="location.href = 'dashboard-student.html'">
+            <i class="fa fa-home"></i><span>Dashboard</span>
+          </li>
+          <li onclick="location.href = 'files-student.html'">
+            <i class="fa fa-folder"></i><span>Files</span>
+          </li>
+          <li class="active" onclick="location.href = 'tasks.html'">
+            <i class="fa fa-check"></i><span>Tasks</span>
+          </li>
+
+          <li onclick="location.href = 'search.html'">
+            <i class="fa fa-user-tie"></i><span>Supervisor Search</span>
+          </li>
+
+          <li onclick="location.href = 'message.html'">
+            <i class="fa fa-envelope"></i><span>Messages</span>
+          </li>
+
+          <li onclick="location.href = 'Notifications-student.html'">
+            <i class="fa fa-bell"></i><span>Notifications</span>
+          </li>
+          <li onclick="location.href = 'profile-student.html'">
+            <i class="fa fa-user"></i><span>Profile</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <h2>Tasks</h2>
+            <p class="sub">Manage your thesis tasks</p>
+          </div>
+
+          <button class="add-btn" id="open-task-modal">Add Task</button>
+        </header>
+        <div class="task-stats">
+          <div class="stat-card">
+            <span>Pending</span>
+            <h3 id="pending-count">0</h3>
+          </div>
+
+          <div class="stat-card">
+            <span>In Progress</span>
+            <h3 id="progress-count">0</h3>
+          </div>
+
+          <div class="stat-card">
+            <span>Completed</span>
+            <h3 id="done-count">0</h3>
+          </div>
+        </div>
+        <div class="task-tabs">
+          <button id="my-tab" class="active">My Tasks</button>
+          <button id="sup-tab">Supervisor Tasks</button>
+        </div>
+
+        <!-- FILTER -->
+        <div class="file-controls">
+          <div class="filters">
+            <button onclick="filterTasks('all')">All</button>
+            <button onclick="filterTasks('pending')">Pending</button>
+            <button onclick="filterTasks('progress')">In Progress</button>
+            <button onclick="filterTasks('done')">Done</button>
+          </div>
+        </div>
+
+        <!-- GRID -->
+        <div id="tasks-container" class="tasks-list"></div>
+      </main>
+    </div>
+
+    <!-- MODAL -->
+    <div id="task-modal" class="modal hidden">
+      <div class="modal-box">
+        <h3>Add Task</h3>
+
+        <form id="task-form">
+          <input
+            type="text"
+            id="task-title"
+            placeholder="Task title"
+            required
+          />
+          <textarea id="task-desc" placeholder="Description..."></textarea>
+          <input type="date" id="task-deadline" />
+          <select id="task-status">
+            <option value="pending">Pending</option>
+            <option value="progress">In Progress</option>
+            <option value="done">Done</option>
+          </select>
+
+          <div class="modal-actions">
+            <button type="submit">Add</button>
+            <button type="button" onclick="closeTaskModal()">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- DELETE MODAL -->
+    <div id="task-delete-modal" class="modal hidden">
+      <div class="modal-box">
+        <h3>Delete Task</h3>
+        <p>Are you sure?</p>
+
+        <div class="modal-actions">
+          <button id="confirm-task-delete">Delete</button>
+          <button onclick="closeTaskDeleteModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets-js/student.js"></script>
+  </body>
+</html>
